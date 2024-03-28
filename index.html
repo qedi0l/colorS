@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Colorwise</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>  
+        <nav>
+            <div class="logo">
+                <h2 class="sitename">Get you color!</h2>
+            </div>
+
+            <div class="menu">
+                <a href="#" class="menu-item current">Get Suggestions <span style="background-color: var(--primary); padding: 0.5em; border-radius: 5px; font-size: 12px; color: var(--secondary);"> New!</span></a>
+                <a href="#faq" class="secondary-button menu-item-font">Learn more</a>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div class="hero-img hero-img-left">
+                <svg xmlns="http://www.w3.org/2000/svg" width="336" height="343" viewBox="0 0 336 343" fill="none">
+                    <rect x="28.0118" width="100.3" height="100.3" rx="9.03606" fill="#bef8be"/>
+                    <rect x="140.963" y="45.1803" width="55.12" height="55.12" rx="9.03606" fill="#b50c0c"/>
+                    <rect x="87.6498" y="287.347" width="55.12" height="55.12" rx="9.03606" fill="#1b0303"/>
+                    <rect x="260.239" y="220.48" width="74.9993" height="74.9993" rx="9.03606" fill="#cd0e0e"/>
+                    <rect y="200.601" width="74.9993" height="74.9993" rx="9.03606" fill="#9fefef"/>
+                    <rect x="84.939" y="112.047" width="163.553" height="163.553" rx="9.03606" fill="#fbe6d0"/>
+                </svg>
+            </div>
+            <div class="hero-text" style="align-items: center;">
+                <h1 style="text-align: center;">Find Color Palettes<br> Matches <span class="color-effect">You!</span></h1>
+                <p class="subtitle" style="text-align: center;">Generate a palette of colors from you photo. Try it now</p>
+                <div class="hero-cta">
+                    <a href="#how" onclick="" class="primary-button">Get Started</a>
+                </div>
+            </div>
+            <div class="hero-img hero-img-right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="316" height="343" viewBox="0 0 316 343" fill="none">
+                    <rect x="0.641357" y="121.083" width="55.12" height="55.12" rx="9.03606" fill="#081A5E"/>
+                    <rect x="57.5686" width="80.4209" height="80.4209" rx="9.03606" fill="#F589A0"/>
+                    <rect x="241.001" y="80.4209" width="74.9993" height="74.9993" rx="9.03606" fill="#E0D5FC"/>
+                    <rect x="99.1345" y="267.467" width="74.9993" height="74.9993" rx="9.03606" fill="#3C62E7"/>
+                    <rect x="66.6047" y="92.1678" width="163.553" height="163.553" rx="9.03606" fill="#F3D872"/>
+                </svg>
+            </div>
+        </div>
+
+        <main>
+            
+            <div class="part2 get-suggestions" id="how">
+                <div class="part2-left">
+                    <h2>How Does it Work?</h2>
+                    <p>Find colors that would go well with your main colors of choice in 4 simple steps.</p>
+                    <a href="#img" onclick="" class="primary-button">Ok, Let's go</a>
+                </div>
+                <div class="part2-right">
+                    <p class="one step">Select and upload you photo</p>
+                    <p class="two step">Select colors of you hair, skin and eys with a pipette</p>
+                    <p class="three step">Get four colors palettes, with colors that match you!</p>
+                    <p class="four step">Either grab the color manually and make you palettes. Also you can export your colors palettes!</p>
+                </div>
+            </div>
+            
+            <div class="part7" id="img">
+                <div class="upload-box">
+                    <input type="file" accept="image/*" hidden>
+                    <img src="" alt="" hidden>
+                    <div class="sub-icon-text primary-button upload-button"><h2>Browse File to Upload</h2></div>
+                    <div class="icon-reupload any-button" hidden>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="pickers-box" style="display:none">
+                    <div class="inner-box">
+                        <div class="picker any-button eye-color-box" style="background-color: var(--static3); ">
+                            <input type="color" id="eye-color" name="eye-color" class="colorpicker" value="#000000">
+                            <label for="eye-color" class="eyes-color-label">Eye Color</label>
+                        </div>
+                        <div class="picker any-button hair-color-box" style="background-color: var(--static3);">
+                            <input type="color" id="hair-color" name="hair-color" class="colorpicker" value="#000000">
+                            <label for="hair-color" class="hair-color-label">Hair Color</label>
+                        </div>
+                        <div class="picker any-button skin-color-box" style="background-color: var(--static3); ">
+                            <input type="color" id="skin-color" name="skin-color" class="colorpicker" value="#000000">
+                            <label for="skin-color" class="skin-color-label">Skin Color</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part1" style="gap: 1em;" id="generator">
+                
+                <div class="flex">
+                    <div class="row">
+                        <div class="column">
+                            <div class="row">
+                                <div class="icon-reupload any-button " id ="triadic-move-hue-l">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg>
+                                </div>
+                                <h1>Triadic mixed</h1>
+                                <div class="icon-reupload any-button" id ="triadic-move-hue-r">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/></svg>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="color-block triadic">
+                                    <p class="color-block-text">first</p>
+                                    <div class="color-block color-code triadic1"></div>
+                                </div>
+                                <div class="color-block triadic">
+                                    <p class="color-block-text">second</p>
+                                    <div class="color-block color-code triadic2"></div>
+                                </div>
+                                <div class="color-block triadic">
+                                    <p class="color-block-text">third</p>
+                                    <div class="color-block color-code triadic3"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column">
+                            <div class="row">
+                                <div class="icon-reupload any-button" id ="complementary-move-hue-l">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg>
+                                </div>
+                                <h1>Complementary</h1>
+                                <div class="icon-reupload any-button" id ="complementary-move-hue-r">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/></svg>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="color-block complementary">
+                                    <p class="color-block-text">for Eyes</p>
+                                    <div class="color-block color-code complementary1"></div>
+                                </div>
+                                <div class="color-block complementary">
+                                    <p class="color-block-text">for Skin</p>
+                                    <div class="color-block color-code complementary2"></div>
+                                </div>
+                                <div class="color-block complementary">
+                                    <p class="color-block-text">for Hair</p>
+                                    <div class="color-block color-code complementary3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="column">
+                            <h1>Monochromatic</h1>
+                            <div class="row">
+                                <div class="color-block monochromatic">
+                                    <p class="color-block-text">for Eyes</p>
+                                    <div class="color-block color-code monochromatic1"></div>
+                                </div>
+                                <div class="color-block monochromatic">
+                                    <p class="color-block-text">for Skin</p>
+                                    <div class="color-block color-code monochromatic2"></div>
+                                </div>
+                                <div class="color-block monochromatic">
+                                    <p class="color-block-text">for Hair</p>
+                                    <div class="color-block color-code monochromatic3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="column">
+                            <h1>Analogous</h1>
+                            <div class="row">
+                                <div class="color-block analogous">
+                                    <p class="color-block-text">for Eyes</p>
+                                    <div class="color-block color-code analogous1"></div>
+                                </div>
+                                <div class="color-block analogous">
+                                    <p class="color-block-text">for Skin</p>
+                                    <div class="color-block color-code analogous2"></div>
+                                </div>
+                                <div class="color-block analogous">
+                                    <p class="color-block-text">for Hair</p>
+                                    <div class="color-block color-code analogous3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <h1>Classic Triadic</h1>
+                            <div class="row">
+                                <div class="color-block ctriadic">
+                                    <p class="color-block-text"></p>
+                                    <div class="color-block color-code ctriadic1"></div>
+                                </div>
+                                <div class="color-block ctriadic">
+                                    <p class="color-block-text"></p>
+                                    <div class="color-block color-code ctriadic2"></div>
+                                </div>
+                                <div class="color-block ctriadic">
+                                    <p class="color-block-text"></p>
+                                    <div class="color-block color-code ctriadic3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="part4" id="faq">
+                <div class="part4-heading">
+                    <h2>FAQ</h2>
+                    <p>Answers to some questions you might have.</p>
+                </div>
+                
+                <div class="faq-list">
+                    <div class="faq">
+                        <div class="faq-q">
+                            <h3>What is this tool exactly?</h3>
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" class="faq-icon">
+                                <path d="M11.5 0L11.5 23" stroke="var(--accent)" stroke-width="6"/>
+                                <path d="M23 11.5L-2.38419e-07 11.5" stroke="var(--accent)" stroke-width="6"/>
+                            </svg>
+                        </div>
+                        <div class="faq-a">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore optio doloribus aspernatur fugiat magni quasi aliquam dolores et, accusantium eligendi est nisi pariatur deleniti, nam expedita iure, beatae libero voluptates.</p>
+                        </div>
+                    </div> 
+
+                    <div class="faq">
+                        <div class="faq-q">
+                            <h3>What can I do with the colors?</h3>
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" class="faq-icon">
+                                <path d="M11.5 0L11.5 23" stroke="var(--accent)" stroke-width="6"/>
+                                <path d="M23 11.5L-2.38419e-07 11.5" stroke="var(--accent)" stroke-width="6"/>
+                            </svg>
+                        </div>
+                        <div class="faq-a">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore optio doloribus aspernatur fugiat magni quasi aliquam dolores et, accusantium eligendi est nisi pariatur deleniti, nam expedita iure, beatae libero voluptates.</p>
+                        </div>
+                    </div> 
+
+                    <div class="faq">
+                        <div class="faq-q">
+                            <h3>What if I receive colors not really match me?</h3>
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" class="faq-icon">
+                                <path d="M11.5 0L11.5 23" stroke="var(--accent)" stroke-width="6"/>
+                                <path d="M23 11.5L-2.38419e-07 11.5" stroke="var(--accent)" stroke-width="6"/>
+                            </svg>
+                        </div>
+                        <div class="faq-a">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore optio doloribus aspernatur fugiat magni quasi aliquam dolores et, accusantium eligendi est nisi pariatur deleniti, nam expedita iure, beatae libero voluptates.</p>
+                        </div>
+                    </div> 
+
+                    <div class="faq">
+                        <div class="faq-q">
+                            <h3>Are these colors all suitable for one website/project?</h3>
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" class="faq-icon">
+                                <path d="M11.5 0L11.5 23" stroke="var(--accent)" stroke-width="6"/>
+                                <path d="M23 11.5L-2.38419e-07 11.5" stroke="var(--accent)" stroke-width="6"/>
+                            </svg>
+                        </div>
+                        <div class="faq-a">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore optio doloribus aspernatur fugiat magni quasi aliquam dolores et, accusantium eligendi est nisi pariatur deleniti, nam expedita iure, beatae libero voluptates.</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+
+            <div class="part5" id="end">
+                <h1>Your <span class="color-effect">Journey</span> Shouldn't End Here.</h1>
+                <p class="subtitle">Follow me on social media to stay tuned on more projects.</p>
+                <a href="#" target="_blank" class="primary-button">Stay Tuned</a>
+            </div>
+
+            <div class="footer" id="footer">
+                <div class="logo">
+                    <a href="#"><h2 class="sitename reversed">Get you color!</h2></a>
+                </div>
+                <div class="footer-cols">
+                    <div class="footer-col">
+                        <p style="margin: 0;">Visualize color that fit you.</p>
+                    </div>
+
+                    <div class="footer-col">
+                        <div class="reversed sub menu-item-header">EXPLORE</div>
+                        <a href="#" class="menu-item">Get Suggestions <span style="background-color: var(--secondary); padding: 0.5em; border-radius: 5px; font-size: 12px; color: var(--primary);"> New!</span></a>
+                    </div>
+
+                    <div class="footer-col">
+                        <div class="reversed sub menu-item-header">LET'S CONNECT</div>
+                        <a href="#" class="menu-item reversed" target="_blank">Twitter</a>
+                        <a href="#" target="_blank" class="menu-item reversed">YouTube</a>
+                        <a href="#" target="_blank" class="menu-item reversed">GitHub</a>
+                    </div>
+                </div>
+                <div style="width: 100%; height: 1px; background-color: var(--secondary); opacity: 20%; margin-top: 1em;"></div>
+                <div>
+                    <p class="sub">Feedback? Suggestions? Features you'd like to see? <a href="qediworks@gmail.com" target="_blank" class="link reversed">Contact me!</a></p>
+                    <p class="sub">Made by <a href="#" target="_blank" class="link reversed">qedi</a></p>
+                </div>
+                
+            </div>
+
+        </main>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
